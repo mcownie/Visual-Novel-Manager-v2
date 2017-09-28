@@ -2,8 +2,8 @@
 # Site
 
 title: Hydra Template
-url: "https://proud-alligator.cloudvent.net"
-baseurl: https://micah686.github.io/Visual-Novel-Manager-v2/
+url: "https://micah686.github.io"
+baseurl: "/Visual-Novel-Manager-v2"
 disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
