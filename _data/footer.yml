@@ -1,0 +1,15 @@
+- links:
+  - name: Status
+    link: /
+- links:
+  - name: Docs
+    link: /
+- links:
+  - name: Github
+    link: https://github.com/micah686/Visual-Novel-Manager-v2
+    social_icon: Github
+    new_window: true
+  - name: RSS
+    link: /feed.xml
+    social_icon: RSS
+    new_window: false
