@@ -513,12 +513,6 @@
     <Content Include="Resources\statusbar\ok.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VndbSharp\VndbSharp\VndbSharp.csproj">
-      <Project>{3e3153b8-15ba-460d-af9f-021ea1760c6e}</Project>
-      <Name>VndbSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
