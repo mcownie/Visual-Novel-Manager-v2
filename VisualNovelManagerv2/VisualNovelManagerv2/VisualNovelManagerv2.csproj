@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VisualNovelManagerCore\VisualNovelManagerCore.csproj">
+      <Project>{3a4262dc-21e2-4d13-9981-2f65fc62db81}</Project>
+      <Name>VisualNovelManagerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
