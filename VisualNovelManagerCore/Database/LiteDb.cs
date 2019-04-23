@@ -43,7 +43,7 @@ namespace VisualNovelManagerCore.Database
                 var test = new Model.VNDB.VnInfo.VnInfo()
                 {
                     Title = "Muv-Luv Alternative",
-                    Length = 5
+                    Length = "Very Long"
                 };
                 vnInfo.Update(test);
                 vnInfo.EnsureIndex(x => x.Id);
