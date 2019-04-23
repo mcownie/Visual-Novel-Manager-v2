@@ -52,7 +52,26 @@
     <Compile Include="Converters\NullImageConverter.cs" />
     <Compile Include="Converters\YesNoBoolConverter.cs" />
     <Compile Include="Database\LiteDb.cs" />
-    <Compile Include="Database\Model\VNDB\VnInfo.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacter.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterTraits.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterVns.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfo.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoAnime.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoLinks.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoRelations.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoScreens.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoStaff.cs" />
+    <Compile Include="Database\Model\VNDB\VnInfo\VnInfoTags.cs" />
+    <Compile Include="Database\Model\VNDB\VnProducer\VnProducer.cs" />
+    <Compile Include="Database\Model\VNDB\VnProducer\VnProducerLinks.cs" />
+    <Compile Include="Database\Model\VNDB\VnProducer\VnProducerRelations.cs" />
+    <Compile Include="Database\Model\VNDB\VnRelease\VnRelease.cs" />
+    <Compile Include="Database\Model\VNDB\VnRelease\VnReleaseMedia.cs" />
+    <Compile Include="Database\Model\VNDB\VnRelease\VnReleaseProducers.cs" />
+    <Compile Include="Database\Model\VNDB\VnRelease\VnReleaseVn.cs" />
+    <Compile Include="Database\Model\VNDB\VnStaff\VnStaff.cs" />
+    <Compile Include="Database\Model\VNDB\VnStaff\VnStaffAliases.cs" />
+    <Compile Include="Database\Model\VNDB\VnStaff\VnStaffLinks.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
