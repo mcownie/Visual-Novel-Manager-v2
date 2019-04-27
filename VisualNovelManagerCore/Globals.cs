@@ -11,5 +11,6 @@ namespace VisualNovelManagerCore
     public static class Globals
     {
         public static readonly string DirectoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static bool NsfwEnabled = false;
     }
 }

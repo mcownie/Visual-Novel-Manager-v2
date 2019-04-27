@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
 using System.Globalization;
+using System.Windows.Data;
 
-namespace VisualNovelManagerCore.Converters
+namespace VisualNovelManagerCore.Helper.Converters
 {
     [ValueConversion(typeof(bool), typeof(bool))]
     public class YesNoBoolConverter : IValueConverter

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Media.Imaging;
+using System.IO;
 
-
-namespace VisualNovelManagerCore.Converters
+namespace VisualNovelManagerCore.Helper.Converters
 {
     public class Base64Converter
     {
@@ -30,7 +28,6 @@ namespace VisualNovelManagerCore.Converters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
                 throw;
             }
         }
@@ -49,7 +46,6 @@ namespace VisualNovelManagerCore.Converters
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
                 throw;
             }
         }
@@ -73,8 +69,6 @@ namespace VisualNovelManagerCore.Converters
             }
             catch (Exception ex)
             {
-
-                Debug.WriteLine(ex);
                 throw;
             }
 
