@@ -48,9 +48,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\Base64Converter.cs" />
-    <Compile Include="Converters\NullImageConverter.cs" />
-    <Compile Include="Converters\YesNoBoolConverter.cs" />
     <Compile Include="Database\LiteDb.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacter.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterTraits.cs" />
@@ -73,6 +70,13 @@
     <Compile Include="Database\Model\VNDB\VnStaff\VnStaffAliases.cs" />
     <Compile Include="Database\Model\VNDB\VnStaff\VnStaffLinks.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Helper\Converters\Base64Converter.cs" />
+    <Compile Include="Helper\Converters\NullImageConverter.cs" />
+    <Compile Include="Helper\Converters\YesNoBoolConverter.cs" />
+    <Compile Include="Helper\Extensions\RangeEnabledObservableCollection.cs" />
+    <Compile Include="Helper\MeasureStringSize.cs" />
+    <Compile Include="Helper\MutableKeyValuePair.cs" />
+    <Compile Include="Helper\ProcessExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
