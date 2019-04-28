@@ -69,6 +69,11 @@
     <Compile Include="Database\Model\VNDB\VnStaff\VnStaff.cs" />
     <Compile Include="Database\Model\VNDB\VnStaff\VnStaffAliases.cs" />
     <Compile Include="Database\Model\VNDB\VnStaff\VnStaffLinks.cs" />
+    <Compile Include="Database\Model\VNDB\VnTagTrait\VnTagData.cs" />
+    <Compile Include="Database\Model\VNDB\VnTagTrait\VnTraitData.cs" />
+    <Compile Include="Database\Model\VNDB\VnUserList\VnVisualNovelList.cs" />
+    <Compile Include="Database\Model\VNDB\VnUserList\VnVoteList.cs" />
+    <Compile Include="Database\Model\VNDB\VnUserList\VnWishList.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Helper\Converters\Base64Converter.cs" />
     <Compile Include="Helper\Converters\NullImageConverter.cs" />
