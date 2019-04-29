@@ -23,7 +23,6 @@ namespace VisualNovelManagerCore.Controls.Main.Startup
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\vndb\images\cover");
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\vndb\images\screenshots");
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\libs\");
-            Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\res\icons");
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\res\icons\country_flags");
         }
     }

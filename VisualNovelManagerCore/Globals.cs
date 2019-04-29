@@ -8,9 +8,18 @@ using System.Reflection;
 
 namespace VisualNovelManagerCore
 {
-    public static class Globals
+    internal static class Globals
     {
-        public static readonly string DirectoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        public static bool NsfwEnabled = false;
+        internal static readonly string DirectoryPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        internal static uint VnId;
+        internal static bool NsfwEnabled = false;
+        internal static SpoilerLevel MaxSpoiler = SpoilerLevel.None;
+    }
+
+    internal enum SpoilerLevel
+    {
+        None,
+        Minor,
+        Major
     }
 }
