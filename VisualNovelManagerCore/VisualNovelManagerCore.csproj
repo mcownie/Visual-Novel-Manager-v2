@@ -83,9 +83,11 @@
     <Compile Include="Helper\Extensions\BindableRichTextBox.cs" />
     <Compile Include="Helper\Extensions\PasswordBoxBindingBehavior.cs" />
     <Compile Include="Helper\Extensions\RangeEnabledObservableCollection.cs" />
+    <Compile Include="Helper\IsJpnText.cs" />
     <Compile Include="Helper\MeasureStringSize.cs" />
     <Compile Include="Helper\MutableKeyValuePair.cs" />
     <Compile Include="Helper\ProcessExtensions.cs" />
+    <Compile Include="Helper\ValidateExe.cs" />
     <Compile Include="Helper\ValidateXml.cs" />
     <Compile Include="Helper\Vndb\HandleError.cs" />
     <Compile Include="Helper\Vndb\RequestOptions.cs" />
