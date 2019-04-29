@@ -76,6 +76,7 @@
     <Compile Include="Database\Model\VNDB\VnUserList\VnVoteList.cs" />
     <Compile Include="Database\Model\VNDB\VnUserList\VnWishList.cs" />
     <Compile Include="Globals.cs" />
+    <Compile Include="Helper\ConnectionTest.cs" />
     <Compile Include="Helper\Converters\Base64Converter.cs" />
     <Compile Include="Helper\Converters\NullImageConverter.cs" />
     <Compile Include="Helper\Converters\YesNoBoolConverter.cs" />
@@ -85,10 +86,18 @@
     <Compile Include="Helper\MeasureStringSize.cs" />
     <Compile Include="Helper\MutableKeyValuePair.cs" />
     <Compile Include="Helper\ProcessExtensions.cs" />
+    <Compile Include="Helper\ValidateXml.cs" />
+    <Compile Include="Helper\Vndb\HandleError.cs" />
+    <Compile Include="Helper\Vndb\RequestOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Main\Startup\IStartupChecks.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VndbSharp\VndbSharp\VndbSharp.csproj">
+      <Project>{1f92c059-4b95-433b-a780-04d5a7f36533}</Project>
+      <Name>VndbSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
