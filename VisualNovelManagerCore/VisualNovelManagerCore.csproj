@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Main\Startup\StartupChecks.cs" />
+    <Compile Include="Controls\Vndb\Screenshot\ScreenshotData.cs" />
     <Compile Include="Database\LiteDb.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacter.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterTraits.cs" />
@@ -102,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Vndb\AddVn\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

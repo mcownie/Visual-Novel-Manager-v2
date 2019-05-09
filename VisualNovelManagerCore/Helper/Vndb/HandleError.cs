@@ -10,9 +10,9 @@ using VndbSharp.Models.Errors;
 
 namespace VisualNovelManagerCore.Helper.Vndb
 {
-    internal class HandleError
+    internal static class HandleError
     {
-        internal static async void HandleErrors(IVndbError error, int counter)
+        internal static void HandleErrors(IVndbError error, int counter)
         {
             if (error is MissingError missing)
             {
