@@ -81,6 +81,7 @@
     <Compile Include="Helper\Converters\Base64Converter.cs" />
     <Compile Include="Helper\Converters\NullImageConverter.cs" />
     <Compile Include="Helper\Converters\YesNoBoolConverter.cs" />
+    <Compile Include="Helper\CreateIconHelper.cs" />
     <Compile Include="Helper\Extensions\BindableRichTextBox.cs" />
     <Compile Include="Helper\Extensions\PasswordBoxBindingBehavior.cs" />
     <Compile Include="Helper\Extensions\RangeEnabledObservableCollection.cs" />
