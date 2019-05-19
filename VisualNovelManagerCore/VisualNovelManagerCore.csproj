@@ -54,8 +54,10 @@
     <Compile Include="Controls\Vndb\Screenshot\ScreenshotData.cs" />
     <Compile Include="Database\LiteDb.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacter.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterInstances.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterTraits.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterVns.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterVoiced.cs" />
     <Compile Include="Database\Model\VNDB\VnInfo\VnInfo.cs" />
     <Compile Include="Database\Model\VNDB\VnInfo\VnInfoAnime.cs" />
     <Compile Include="Database\Model\VNDB\VnInfo\VnInfoLinks.cs" />

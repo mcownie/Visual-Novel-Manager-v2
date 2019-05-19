@@ -12,7 +12,7 @@ namespace VisualNovelManagerCore.Database.Model.VNDB.VnInfo
         public uint? VnId { get; set; }
         public string ImageUrl { get; set; }
         public string ReleaseId { get; set; }
-        public string Nsfw { get; set; }
+        public bool Nsfw { get; set; }
         public int? Height { get; set; }
         public int? Width { get; set; }
     }
