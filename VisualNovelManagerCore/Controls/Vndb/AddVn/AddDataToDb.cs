@@ -137,6 +137,8 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
             {
                 List<VnCharacter> vnCharacters = new List<VnCharacter>();
                 List<VnCharacterVns> vnCharacterVns = new List<VnCharacterVns>();
+                List<VnCharacterVoiced> vnCharacterVoices = new List<VnCharacterVoiced>();
+                List<VnCharacterInstances> vnCharacterInstances = new List<VnCharacterInstances>();
                 foreach (Character vncharacter in characters)
                 {
                     VnCharacter character = new VnCharacter()
@@ -169,11 +171,38 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
                             Role = vn.Role.ToString()
                         });
                     }
+
+                    foreach (VoiceActorMetadata voice in vncharacter.VoiceActorMetadata)
+                    {
+                        vnCharacterVoices.Add(new VnCharacterVoiced()
+                        {
+                            StaffId = voice.StaffId,
+                            StaffAliasId = voice.AliasId,
+                            VnId = voice.VisualNovelId,
+                            Note = voice.Note
+                        });
+                    }
+
+                    foreach (CharacterInstances instance in vncharacter.CharacterInstances)
+                    {
+                        vnCharacterInstances.Add(new VnCharacterInstances()
+                        {
+                            CharacterId = character.Id,
+                            Spoiler = (byte)instance.Spoiler,
+                            Name = instance.Name,
+                            Original = instance.Kanji
+                        });
+                    }
                 }
             }
         }
 
         private async Task GetDetailsFromTagDump(ReadOnlyCollection<TagMetadata> vnTags)
+        {
+            throw new NotImplementedException();
+        }
+
+        private async Task GetDetailsFromTraitDump(ReadOnlyCollection<TraitMetadata> traits, uint charId)
         {
             throw new NotImplementedException();
         }

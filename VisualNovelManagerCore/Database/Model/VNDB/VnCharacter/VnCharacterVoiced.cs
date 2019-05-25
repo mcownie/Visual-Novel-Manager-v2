@@ -9,9 +9,9 @@ namespace VisualNovelManagerCore.Database.Model.VNDB.VnCharacter
     public class VnCharacterVoiced
     {
         public int Id { get; set; }
-        public uint StaffId { get; set; }
-        public uint StaffAliasId { get; set; }
-        public uint VnId { get; set; }
+        public int StaffId { get; set; }
+        public int StaffAliasId { get; set; }
+        public int VnId { get; set; }
         public string Note { get; set; }
     }
 }
