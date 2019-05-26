@@ -185,10 +185,7 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
                         });
                     }
 
-                    foreach (CharacterInstances instance in vncharacter.CharacterInstances)
-                    {
-                        
-                    }
+                    
                     //foreach (CharacterInstances instance in vncharacter.CharacterInstances)
                     //{
                     //    vnCharacterInstances.Add(new VnCharacterInstances()
