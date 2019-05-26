@@ -24,6 +24,7 @@ namespace VisualNovelManagerCore.Controls.Main.Startup
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\vndb\images\screenshots");
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\libs\");
             Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\res\icons\country_flags");
+            Directory.CreateDirectory(Globals.DirectoryPath + @"\Data\res\icons\platforms");
         }
     }
 }
