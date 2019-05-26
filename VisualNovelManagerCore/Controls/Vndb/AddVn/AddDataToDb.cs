@@ -185,20 +185,16 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
                         });
                     }
 
-                    foreach (VndbSharp.Models.Character.CharacterInstances VARIABLE in vncharacter.CharacterInstances)
+                    foreach (CharacterInstances instance in vncharacter.CharacterInstances)
                     {
-                        
+                        vnCharacterInstances.Add(new VnCharacterInstances()
+                        {
+                            CharacterId = character.Id,
+                            Spoiler = (byte)instance.Spoiler,
+                            Name = instance.Name,
+                            Original = instance.Kanji
+                        });
                     }
-                    //foreach (CharacterInstances instance in vncharacter.CharacterInstances)
-                    //{
-                    //    vnCharacterInstances.Add(new VnCharacterInstances()
-                    //    {
-                    //        CharacterId = character.Id,
-                    //        Spoiler = (byte)instance.Spoiler,
-                    //        Name = instance.Name,
-                    //        Original = instance.Kanji
-                    //    });
-                    //}
                 }
             }
         }
