@@ -15,9 +15,9 @@ namespace VisualNovelManagerCore.Database.Model.VNDB.VnRelease
         public string Original { get; set; }
         public string Released { get; set; }
         public string ReleaseType { get; set; }
-        public string Patch { get; set; }
-        public string Freeware { get; set; }
-        public string Doujin { get; set; }
+        public bool Patch { get; set; }
+        public bool Freeware { get; set; }
+        public bool Doujin { get; set; }
         public string Languages { get; set; }
         public string Website { get; set; }
         public string Notes { get; set; }

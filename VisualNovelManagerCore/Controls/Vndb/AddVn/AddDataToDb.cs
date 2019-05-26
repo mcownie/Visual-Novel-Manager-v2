@@ -11,7 +11,9 @@ using VndbSharp.Models.Common;
 using VndbSharp.Models.VisualNovel;
 using LiteDB;
 using VisualNovelManagerCore.Database.Model.VNDB.VnCharacter;
+using VisualNovelManagerCore.Database.Model.VNDB.VnRelease;
 using VndbSharp.Models.Character;
+using VndbSharp.Models.Release;
 
 namespace VisualNovelManagerCore.Controls.Vndb.AddVn
 {
@@ -160,7 +162,7 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
                         Weight = Convert.ToInt32(vncharacter.Weight)
                     };
 
-                    foreach (VisualNovelMetadata vn in vncharacter.VisualNovels)
+                    foreach (VndbSharp.Models.Character.VisualNovelMetadata vn in vncharacter.VisualNovels)
                     {
                         vnCharacterVns.Add(new VnCharacterVns()
                         {
@@ -192,6 +194,84 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
                             Name = instance.Name,
                             Original = instance.Kanji
                         });
+                    }
+                }
+            }
+        }
+
+        private async Task AddVnReleases(List<Release> vnReleases, uint vnid)
+        {
+            if (vnReleases.Count > 0)
+            {
+                List<VnRelease> vnRelease = new List<VnRelease>();
+                List<VnReleaseMedia> vnReleaseMedia = new List<VnReleaseMedia>();
+                List<VnReleaseProducers> vnReleaseProducers = new List<VnReleaseProducers>();
+                List<VnReleaseVn> vnReleaseVns = new List<VnReleaseVn>();
+                foreach (Release release in vnReleases)
+                {
+                    vnRelease.Add(new VnRelease()
+                    {
+                        ReleaseId = release.Id,
+                        Title = release.Name,
+                        Original = release.OriginalName,
+                        ReleaseType = release.Type.ToString(),
+                        Patch = release.IsPatch,
+                        Freeware = release.IsFreeware,
+                        Doujin = release.IsDoujin,
+                        Languages = ConvertToCsv(release.Languages),
+                        Website = release.Website,
+                        Notes = release.Notes,
+                        MinAge = Convert.ToByte(release.MinimumAge),
+                        Gtin = release.Gtin,
+                        Catalog = release.Catalog,
+                        Platforms = ConvertToCsv(release.Platforms),
+                        Resolution = release.Resolution,
+                        Voiced = release.Voiced.ToString(),
+                        Animation = string.Join(",", release.Animation)
+                    });
+
+                    if (release.Media.Count > 0)
+                    {
+                        foreach (Media media in release.Media)
+                        {
+                            vnReleaseMedia.Add(new VnReleaseMedia()
+                            {
+                                ReleaseId = release.Id,
+                                Medium = media.Medium,
+                                Quantity = media.Quantity
+                            });
+                        }
+                    }
+
+                    if (release.Producers.Count > 0)
+                    {
+                        foreach (ProducerRelease producer in release.Producers)
+                        {
+                            vnReleaseProducers.Add(new VnReleaseProducers()
+                            {
+                                ReleaseId = release.Id,
+                                ProducerId = producer.Id,
+                                Developer = producer.IsDeveloper,
+                                Publisher = producer.IsPublisher,
+                                Name = producer.Name,
+                                Original = producer.OriginalName,
+                                ProducerType = producer.ProducerType
+                            });
+                        }
+                    }
+
+                    if (release.VisualNovels.Count > 0)
+                    {
+                        foreach (VndbSharp.Models.Release.VisualNovelMetadata vn in release.VisualNovels)
+                        {
+                            vnReleaseVns.Add(new VnReleaseVn()
+                            {
+                                ReleaseId = vn.Id,
+                                VnId = vnid,
+                                Name = vn.Name,
+                                Original = vn.OriginalName
+                            });
+                        }
                     }
                 }
             }
