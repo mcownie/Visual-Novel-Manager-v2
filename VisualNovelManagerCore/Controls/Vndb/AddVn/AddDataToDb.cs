@@ -137,13 +137,13 @@ namespace VisualNovelManagerCore.Controls.Vndb.AddVn
         {
             if (characters.Count > 0)
             {
-                List<VnCharacter> vnCharacters = new List<VnCharacter>();
+                List<VnCharacterInfo> vnCharacters = new List<VnCharacterInfo>();
                 List<VnCharacterVns> vnCharacterVns = new List<VnCharacterVns>();
                 List<VnCharacterVoiced> vnCharacterVoices = new List<VnCharacterVoiced>();
                 List<VnCharacterInstances> vnCharacterInstances = new List<VnCharacterInstances>();
                 foreach (Character vncharacter in characters)
                 {
-                    VnCharacter character = new VnCharacter()
+                    VnCharacterInfo character = new VnCharacterInfo()
                     {
                         VnId = vnid,
                         CharacterId = vncharacter.Id,

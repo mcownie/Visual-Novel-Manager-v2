@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using VisualNovelManagerCore.Database.Model.VNDB.VnInfo;
 using VisualNovelManagerCore.Helper;
 using VisualNovelManagerCore.Helper.Converters;
 
@@ -20,6 +21,71 @@ namespace VisualNovelManagerCore.Controls.Vndb.Screenshot
         private static void SetBasePath()
         {
             basePath = $@"{Globals.DirectoryPath}\Data\vndb\images\screenshots\{Globals.VnId}\";
+        }
+
+        private static List<Screenshot> LoadScreenshotList()
+        {
+            try
+            {
+                List<Screenshot> screenshotList = new List<Screenshot>();
+                var vnScreenshot = Globals.LiteDbInstance.GetCollection<VnInfoScreens>("vninfoscreens");
+                foreach (VnInfoScreens screens in vnScreenshot.Find(x => x.VnId== Globals.VnId))
+                {
+                    screenshotList.Add(new Screenshot
+                    {
+                        Url = screens.ImageUrl,
+                        IsNsfw = Convert.ToBoolean(screens.Nsfw)
+                    });
+                }
+                return screenshotList;
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+        }
+
+        private static BitmapImage LoadLargeScreenshot(int SelectedScreenIndex)
+        {
+            List<Screenshot> screenshotList = LoadScreenshotList();
+            BitmapImage bImage = new BitmapImage();
+            if (screenshotList.Count > 0)
+            {
+                switch (screenshotList[SelectedScreenIndex].IsNsfw)
+                {
+                    case true:
+                        if (Globals.NsfwEnabled == true)
+                        {
+                            string filename = Path.GetFileNameWithoutExtension(screenshotList[SelectedScreenIndex].Url);
+                            string pathNoExt = $@"{basePath}\{filename}";
+                            bImage = Base64Converter.GetBitmapImageFromBytes(File.ReadAllText(pathNoExt));
+                            break;
+                        }
+                        else
+                        {
+                            bImage = new BitmapImage(new Uri($@"{Globals.DirectoryPath}\Data\res\nsfw\screenshot.jpg"));
+                            break;
+                        }
+                    case false:
+                        string path = $@"{basePath}\{Path.GetFileName(screenshotList[SelectedScreenIndex].Url)}";
+                        bImage = new BitmapImage();
+                        using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read))
+                        {
+                            bImage.BeginInit();
+                            bImage.CacheOption = BitmapCacheOption.OnLoad;
+                            bImage.StreamSource = stream;
+                            bImage.EndInit();
+                            bImage.Freeze();
+                        }
+                        break;
+                }
+                return bImage;
+            }
+            else
+            {
+                return EmptyBitmap.EmptyBitmapImage();
+            }            
         }
 
         private static async Task DownloadScreenshots()

@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using VisualNovelManagerCore.Database.Model.VNDB.VnInfo;
 using VisualNovelManagerCore.Helper.Converters;
+using VisualNovelManagerCore.Helper;
 
 namespace VisualNovelManagerCore.Controls.Vndb.VnMain
 {
@@ -21,7 +23,7 @@ namespace VisualNovelManagerCore.Controls.Vndb.VnMain
             {
                 if (!File.Exists(path) && !File.Exists(pathNoExt))
                 {
-                    return EmptyBitmapImage();
+                    return EmptyBitmap.EmptyBitmapImage();
                 }
                 switch (nsfw)
                 {
@@ -47,10 +49,10 @@ namespace VisualNovelManagerCore.Controls.Vndb.VnMain
             }
             catch (Exception ex)
             {
-                return EmptyBitmapImage();
+                return EmptyBitmap.EmptyBitmapImage();
             }
 
-            return EmptyBitmapImage();
+            return EmptyBitmap.EmptyBitmapImage();
         }
 
         private IEnumerable<string> GetLangauges(string csv)
@@ -70,26 +72,6 @@ namespace VisualNovelManagerCore.Controls.Vndb.VnMain
                     : $@"{Globals.DirectoryPath}\Data\res\icons\platforms\Unknown.png")
                 .ToList();
         }
-        private BitmapImage EmptyBitmapImage()
-        {
-            BitmapSource bitmap = BitmapImage.Create(
-                2, 2, 96, 96, PixelFormats.Indexed1, new BitmapPalette(new List<Color> { Colors.Transparent }),
-                new byte[] { 0, 0, 0, 0 }, 1);
-            MemoryStream stream = new MemoryStream();
-            StreamWriter writer = new StreamWriter(stream);
-            writer.Write(bitmap);
-            writer.Flush();
-            stream.Position = 0;
-            
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-            bitmapImage.StreamSource = stream;
-            bitmapImage.EndInit();
-
-            stream.Close();
-            writer.Close();
-            return bitmapImage;
-        }
+        
     }
 }

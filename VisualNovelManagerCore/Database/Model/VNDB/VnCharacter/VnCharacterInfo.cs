@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VisualNovelManagerCore.Database.Model.VNDB.VnCharacter
 {
-    public class VnCharacter
+    public class VnCharacterInfo
     {
         public int Id { get; set; }
         public uint? VnId { get; set; }

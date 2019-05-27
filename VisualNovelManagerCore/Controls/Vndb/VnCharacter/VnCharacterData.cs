@@ -14,7 +14,7 @@ namespace VisualNovelManagerCore.Controls.Vndb.VnCharacter
         {
             try
             {
-                var vnCharacter = Globals.LiteDbInstance.GetCollection<Database.Model.VNDB.VnCharacter.VnCharacter>("vncharacter");
+                var vnCharacter = Globals.LiteDbInstance.GetCollection<Database.Model.VNDB.VnCharacter.VnCharacterInfo>("vncharacter");
                 List<string> characterList = vnCharacter.Find(x => x.VnId == Globals.VnId).Select(i => i.ImageLink).ToList();
                 if (characterList.Count > 0)
                 {

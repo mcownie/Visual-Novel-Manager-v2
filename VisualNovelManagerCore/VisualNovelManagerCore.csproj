@@ -52,9 +52,10 @@
     <Compile Include="Controls\Vndb\AddVn\AddDataToDb.cs" />
     <Compile Include="Controls\Vndb\AddVn\GetVnData.cs" />
     <Compile Include="Controls\Vndb\Screenshot\ScreenshotData.cs" />
+    <Compile Include="Controls\Vndb\VnCharacter\VnCharacterData.cs" />
     <Compile Include="Controls\Vndb\VnMain\VnMainData.cs" />
     <Compile Include="Database\LiteDb.cs" />
-    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacter.cs" />
+    <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterInfo.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterInstances.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterTraits.cs" />
     <Compile Include="Database\Model\VNDB\VnCharacter\VnCharacterVns.cs" />

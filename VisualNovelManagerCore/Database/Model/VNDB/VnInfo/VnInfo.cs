@@ -30,7 +30,7 @@ namespace VisualNovelManagerCore.Database.Model.VNDB.VnInfo
         public virtual VnInfoScreens VnInfoScreens { get; set; }
         public virtual VnInfoStaff VnInfoStaff { get; set; }
         public virtual ICollection<VnInfoTags> VnInfoTags { get; set; }
-        public virtual ICollection<VnCharacter.VnCharacter> VnCharacters { get; set; }
+        public virtual ICollection<VnCharacter.VnCharacterInfo> VnCharacters { get; set; }
         public virtual ICollection<VnRelease.VnRelease> VnReleases { get; set; }
         public virtual ICollection<VnInfoScreens> VnInfoScreensCollection { get; set; }
     }
